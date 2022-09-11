@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sql-pv
+  namespace: manar-tawazun
+  labels:
+    name: ManarAlolasi
+    type: amazonEBS
+spec:
+  capacity:
+    storage: 100GiB
+  accessModes:
+    - ReadWriteOnce
+  awsElasticBlockStore:
+    volumeID: vol-04105ad728dcbcfb3
+    fsType: ext4
