@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: deploy
+    name: ManarAlolasi
+    namespace: manar-tawazun
+    type: amazonEBS
+  name: sql-pv-claim
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100GiB
+  selector:
+    matchLabels:
+      type: "amazonEBS"
